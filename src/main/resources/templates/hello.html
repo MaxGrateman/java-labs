@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Hello Page</title>
+</head>
+    <body>
+        <h1>Hello, World!</h1>
+
+        <p>Current time: <span th:text="${currentTime}"></span></p>
+
+        <form action="/add" method="post">
+            <label for="number">Enter a number:</label>
+            <input type="number" id="number" name="number" required>
+            <button type="submit">Submit</button>
+        </form>
+        <p>Numbers from 1 to n:</p>
+        <ul>
+            <li th:each="num : ${numbers}" th:text="${num}"></li>
+        </ul>
+
+        <form action="/random" method="get">
+            <button type="submit">Generate random number</button>
+        </form>
+        <p>Random number: <span th:text="${randomNum}"></span></p>
+
+        <form action="/reverse" method="post">
+            <label for="word">Enter a word:</label>
+            <input type="text" id="word" name="word" required>
+            <button type="submit">Reverse</button>
+        </form>
+        <p>Reversed word: <span th:text="${reversedWord}"></span></p>
+
+        <form action="/fibonacci" method="post">
+            <label for="word">Enter the number</label>
+            <input type="text" id="num" name="number" required>
+            <button type="submit">Fibonacci</button>
+        </form>
+        <p>Fibonacci number: <span th:text="${fibonacciResult}"></span></p>
+    </body>
+</html>
