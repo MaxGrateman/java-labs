@@ -1,10 +1,14 @@
 package com.example.demo;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Min;
 
 public class User {
     private Long id;
 
+    @NotEmpty(message = "Имя не может быть пустым")
     private String name;
 
+    @Min(value = 18, message = "Возраст должен быть больше 18 лет")
     private int age;
 
     User() {}
